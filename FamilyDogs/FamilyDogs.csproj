@@ -178,27 +178,59 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\DogsApiController.cs" />
+    <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Domain\Dog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GroupModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Request\DogsCreateRequest.cs" />
+    <Compile Include="Models\Request\DogsUpdateRequest.cs" />
+    <Compile Include="Models\Response\ItemResponse.cs" />
+    <Compile Include="Models\Response\ItemsResponse.cs" />
+    <Compile Include="Models\Response\SuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\DogService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\20170930_122757.jpg" />
+    <Content Include="Content\Images\boxer_h1_heading.jpg" />
+    <Content Include="Content\Images\new_templatemo_left_header.jpg" />
+    <Content Include="Content\templatemo_style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\5b7fdeab1900001d035028dc.jpeg" />
+    <Content Include="Content\Images\templatemo_h1.jpg" />
+    <Content Include="Content\Images\templatemo_h2.jpg" />
+    <Content Include="Content\Images\templatemo_h3.png" />
+    <Content Include="Content\Images\templatemo_html_bg.jpg" />
+    <Content Include="Content\Images\templatemo_left_header.jpg" />
+    <Content Include="Content\Images\templatemo_logo.png" />
+    <Content Include="Content\Images\templatemo_page_bg.jpg" />
+    <Content Include="Content\Images\templatemo_photo1.jpg" />
+    <Content Include="Content\Images\templatemo_photo2.jpg" />
+    <Content Include="Content\Images\templatemo_right_bg.png" />
+    <Content Include="Content\Images\templatemo_right_footer.jpg" />
+    <Content Include="Content\Images\templatemo_right_header.jpg" />
+    <Content Include="Content\Images\templatemo_star.jpg" />
+    <Content Include="Content\Images\templatemo_top_button.png" />
+    <Content Include="Content\Images\templatemo_top_current.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\dogService.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -210,6 +242,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,7 +253,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -244,6 +276,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Dogs\DogsIndex.cshtml" />
+    <Content Include="Views\Dogs\Edit.cshtml" />
+    <Content Include="Views\Dogs\Create.cshtml" />
+    <Content Include="Views\Shared\_myLayoutPage.cshtml" />
+    <Content Include="Views\Shared\_myLayoutPageDogsIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
