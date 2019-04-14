@@ -9,15 +9,15 @@ namespace FamilyDogs.Models.Request
     public class DogsCreateRequest
     {
         [Required(ErrorMessage = "dog name is required")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "name length must be between 30 and 2 characters")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "name must be between 30 and 2 characters")]
         public string Name { get; set; }
 
         [Required(ErrorMessage="dog breed is required")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "breed length must be between 30 and 2 characters")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "breed must be between 30 and 2 characters")]
         public string Breed { get; set; }
 
         [Required(ErrorMessage = "dog color is required")]
-        [StringLength(10, MinimumLength = 2, ErrorMessage = "color length must be between 10 and 2 characters")]
+        [StringLength(10, MinimumLength = 2, ErrorMessage = "color must be between 10 and 2 characters")]
         public string Color { get; set; }
 
         [Required(ErrorMessage = "dog size is required")]
