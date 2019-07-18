@@ -7,9 +7,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Khanjian Family Dogs</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJWDhiT5Q7EUk7hSElmOfx6lUH_iJpvEk&callback=initMap" type="text/javascript"></script>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="templatemo_left_column">
@@ -17,21 +19,21 @@
         <div class="button">CATEGORIES</div>
         <div class="templatemo_leftmenu">
             <ul>
-                <li><a href="#">»  Create New Dog</a></li>
-                <li><a href="#">»  Dog Index</a></li>
-                <li><a href="#">»  Doggy Hotel </a></li>
-                <li><a href="#">»  Grooming </a></li>
-                <li><a href="#">»  The Vet</a></li>
+                <li><a href="/dogs/add">»  Create New Dog</a></li>
+                <li><a href="/dogs/dogsindex">»  Dog Index</a></li>
+                <li><a href="http://www.canyonviewranch.com/">»  Doggy Hotel </a></li>
+                <li><a href="http://www.junglepetspa.com/">»  Grooming </a></li>
+                <li><a href="http://missionvet.com/">»  The Vet</a></li>
             </ul>
         </div>
         <div class="button">QUICK LINKS</div>
         <div class="templatemo_leftmenu">
             <ul>
-                <li><a href="#">»  Dog Blog</a></li>
-                <li><a href="#">»  Dog Park</a></li>
-                <li><a href="#">»  PetCo</a></li>
-                <li><a href="#">»  PetSmart</a></li>
-                <li><a href="#">»  Youtube</a></li>
+                <li><a href="https://ohmydogblog.com/">»  Dog Blog</a></li>
+                <li><a href="https://www.laparks.org/dogparks">»  Dog Park</a></li>
+                <li><a href="https://www.petco.com/shop/en/petcostore">»  PetCo</a></li>
+                <li><a href="https://www.petsmart.com/">»  PetSmart</a></li>
+                <li><a href="https://www.youtube.com/">»  Youtube</a></li>
             </ul>
         </div>
     </div>
@@ -43,21 +45,63 @@
             <p>My puppies want a puppy! After years of begging, nagotating and complaining, I'm finally ready to give in to the whining, mopping and constant nagging.</p>
             <p>But not just any dog will do, no way!!! We need one that will fit our lifestyle, one that will fit in and become a part of our family. </p>
             <p>This site will enable the kids (Anita & Ben) to do their homework by procuring dog related data they find on the internet and entering it <a href="~/dogs/add">here</a> to help mom and I make a decision based on criteria such as shedding, exercise and aggression.</p>
-            <h2>Local pounds in the City</h2>
-            <p>Suspendisse potenti. Ut sed pede. Nullam vitae tellus. Sed ultrices. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur velit tellus, placerat et, dapibus varius, aliquet quis, purus. Aliquam sagittis molestie sapien. Nulla tellus risus, tincidunt vitae, sagittis vel, interdum at, erat. Duis vitae velit. Ut ultricies. Fusce sollicitudin nisl a lectus. Pellentesque odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed leo. Duis suscipit lorem in risus.      </p>
-            <p><strong>READ COMMENT - 3</strong></p>
-            <p>&nbsp;</p>
-            <h2>Vivamus a massa</h2>
-            <p><img src="images/templatemo_photo2.jpg" alt="templatemo.com" width="139" height="137" />Donec iaculis felis id neque. Morbi nunc. Praesent varius egestas velit. Donec a massa ut pede pulvinar vulputate. Nulla et augue. Sed eu nunc quis pede tristique suscipit. Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit, pellentesque mattis, faucibus vitae, feugiat vitae, sapien. Donec ante. Fusce ac orci sit amet velit ultrices condimentum. Integer imperdiet odio ac eros. Ut id massa. Nullam nunc. Vivamus sagittis varius lorem.</p>
-            <p><strong>READ COMMENT - 5</strong></p>
+            <h2>Local pounds in the City</h2>           
+            <p>Some local animal shelters around the city where we can adpot our dog.</p>
+            <div id="modal-map2" style="height:40%; width:130%; position:relative; overflow:initial"></div>
         </div>
         <div id="templatemo_right_bot">Copyright © Family Dog Search <!-- Credit: www.templatemo.com --></div>
     </div>
-    <!--  This layout is designed by w w w . t e m p l a t e m o . c o m  -->
-    <!-- templatemo 034 pets -->
-    <!--
-    Pets Template
-    http://www.templatemo.com/preview/templatemo_034_pets
-    -->
 </body>
 </html>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        initMap();
+    });
+
+    function initMap() {
+
+        var animalShelterLatLong = [];
+
+        var as1 = { title: 'Los Angeles City East Valley Animal Shelter', lat: 34.194431, lng: -118.446347 };
+        animalShelterLatLong.push(as1);
+
+        var as2 = { title: 'Animal Hope and Wellness Foundation', lat: 34.150866, lng: -118.447932 };
+        animalShelterLatLong.push(as2);
+
+        var as3 = { title: 'Best Friends Animal Society, Los Angeles', lat: 34.271187, lng: -118.465610 };
+        animalShelterLatLong.push(as3);
+
+        var map = new google.maps.Map(document.getElementById('modal-map2'), {
+            zoom: 11,
+            center: new google.maps.LatLng(34.195795, -118.368347),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.LEFT_BOTTOM
+            },
+            streetViewControl: false
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+
+        for (i = 0; i < animalShelterLatLong.length; i++) {
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(animalShelterLatLong[i].lat, animalShelterLatLong[i].lng),
+                map: map
+            })
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(animalShelterLatLong[i].title);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+
+        }
+    }
+
+</script>

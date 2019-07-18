@@ -16,15 +16,27 @@ namespace FamilyDogs.Controllers
 
         [Route("home")]
         public ActionResult Index()
-        {
+        {          
             return View();
         }
 
 
         [Route("dogsindex"), HttpGet]
-        public ActionResult DogsIndex()
+        public ActionResult DogsIndex(string sortBy)
         {
-            var dogs = ds.GetAll();
+            ViewBag.SortSizeParameter = string.IsNullOrEmpty(sortBy) ? "Size desc" : "";
+            var dogs = ds.GetAll().AsQueryable();
+
+            switch (sortBy)
+            {
+                case "Size desc":
+                    dogs = dogs.OrderByDescending(x => x.Size);
+                    break;
+                default:
+                    dogs = dogs.OrderBy(x => x.Size);
+                    break;
+
+            }
             return View(dogs);
         }
 

@@ -151,8 +151,7 @@ h2 {
 #templatemo_right_column {
 	float: right;
 	width: 577px;
-	background: url(images/templatemo_right_bg.png) repeat-y;
-
+	background: url(images/templatemo_right_bg.png) repeat-y;   
 }
 #templatemo_right_top {
 	float: left;
@@ -170,6 +169,7 @@ h2 {
 	padding: 0px 45px 0px 45px;
 	text-align: left;
     font-size: 14px;
+    height: 900px;
 }
 #templatemo_right_mid img {
 	float: right;

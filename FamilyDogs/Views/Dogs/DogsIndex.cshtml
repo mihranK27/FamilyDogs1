@@ -21,7 +21,9 @@
                 @Html.DisplayNameFor(model => model.Color)
             </th>
             <th style="padding:10px">
-                @Html.DisplayNameFor(model => model.Size)
+               @* @Html.DisplayNameFor(model => model.Size)*@
+                @Html.ActionLink("Size", "DogsIndex", new { sortBy = ViewBag.SortSizeParameter }) 
+                @Html.Raw("&#9660");
             </th>
             <th style="padding:10px">
                 @Html.DisplayNameFor(model => model.LivingArea)
